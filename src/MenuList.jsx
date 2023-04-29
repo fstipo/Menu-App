@@ -3,7 +3,9 @@ import Menu from './Menu';
 const MenuList = ({ menuList, category }) => {
   console.log({ category });
 
-  const filteredList = menuList.filter((menu) => category === menu.category);
+  const filteredList = category
+    ? menuList.filter((menu) => category === menu.category)
+    : menuList;
 
   return (
     <section className="section-center">

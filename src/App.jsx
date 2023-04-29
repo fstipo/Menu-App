@@ -5,18 +5,14 @@ import MenuList from './MenuList';
 
 const App = () => {
   const [menuList, setMenuList] = useState(data);
-  const [category, setCategory] = useState(true);
+  const [category, setCategory] = useState('');
   return (
     <main>
       <section className="menu">
         {/* <Title /> */}
         <Title text="our menu" />
         <section className="btn-container">
-          <button
-            type="button"
-            className="btn"
-            onClick={() => setCategory('all')}
-          >
+          <button type="button" className="btn" onClick={() => setCategory('')}>
             all
           </button>
           <button
@@ -43,7 +39,6 @@ const App = () => {
         </section>
         <MenuList menuList={menuList} category={category} />
       </section>
-      {/* <Menus menus={menus} category={category} /> */}
     </main>
   );
 };
