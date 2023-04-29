@@ -1,4 +1,4 @@
-const Menu = ({ img, title, price, desc, category: cat }) => {
+const MenuItem = ({ img, title, price, desc, category: cat }) => {
   return (
     <article className="menu-item">
       <img className="img" src={img} alt={title} />
@@ -12,4 +12,4 @@ const Menu = ({ img, title, price, desc, category: cat }) => {
     </article>
   );
 };
-export default Menu;
+export default MenuItem;
