@@ -1,28 +1,49 @@
 import { useState } from 'react';
-import Menus from './Menus';
-import Title from './Title';
 import data from './data';
+import Title from './Title';
+import MenuList from './MenuList';
 
 const App = () => {
-  const [menus, setMenus] = useState(data);
+  const [menuList, setMenuList] = useState(data);
+  const [category, setCategory] = useState(true);
   return (
-    <main className="menu">
-      <Title />
-      <section className="btn-container">
-        <button type="button" className="btn">
-          all
-        </button>
-        <button type="button" className="btn">
-          breakfast
-        </button>
-        <button type="button" className="btn">
-          Lunch
-        </button>
-        <button type="button" className="btn">
-          shakes
-        </button>
+    <main>
+      <section className="menu">
+        {/* <Title /> */}
+        <Title text="our menu" />
+        <section className="btn-container">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => setCategory('all')}
+          >
+            all
+          </button>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => setCategory('breakfast')}
+          >
+            breakfast
+          </button>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => setCategory('lunch')}
+          >
+            Lunch
+          </button>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => setCategory('shakes')}
+          >
+            shakes
+          </button>
+        </section>
+        <MenuList menuList={menuList} category={category} />
       </section>
-      <Menus menus={menus} />
+      {/* <Menus menus={menus} category={category} /> */}
     </main>
   );
 };
